@@ -6,7 +6,6 @@ import LoginPage from './component/LoginPage';
 import HomePage from './component/HomePage';
 import RegistrationPage from './component/RegistrationPage';
 import Dashboard from './component/Dashboard';
-import JournalPage from './component/JournalPage';
 
 function App() {
   const [user, setUser] = useState('');
@@ -45,7 +44,6 @@ function App() {
               )
             }
           />
-          <Route path="/journal" element={<JournalPage />} />
         </Routes>
       </div>
     </Router>
