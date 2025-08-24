@@ -1,0 +1,303 @@
+/* Import Dongle font */
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+
+.auth-page {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-family: 'Dongle', sans-serif;
+  overflow: hidden;
+}
+
+/* Gradient background styles */
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+}
+
+:root {
+  --color-bg1: rgb(108, 0, 162);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --color5: 180, 180, 50;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+.gradients-container {
+  filter: url(#goo) blur(40px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.g1 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: center center;
+  animation: moveVertical 30s ease infinite;
+  opacity: 1;
+}
+
+.g2 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+  opacity: 1;
+}
+
+.g3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+  opacity: 1;
+}
+
+.g4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+  opacity: 0.7;
+}
+
+.g5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+  opacity: 1;
+}
+
+@keyframes moveInCircle {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes moveVertical {
+  0% { transform: translateY(-50%); }
+  50% { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes moveHorizontal {
+  0% { transform: translateX(-50%) translateY(-10%); }
+  50% { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
+}
+
+/* Auth container styles */
+.auth-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 10;
+}
+
+.auth-container h2 {
+  color: white;
+  font-size: 42px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.auth-container p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+/* Form styles */
+.auth-form {
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  color: #333;
+  font-family: 'Dongle', sans-serif;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Button styles */
+.auth-button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Dongle', sans-serif;
+  margin-top: 10px;
+}
+
+.auth-button.primary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #6D5DCA;
+}
+
+.auth-button.primary:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Link styles */
+.auth-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.auth-link p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22px;
+  margin: 0;
+}
+
+.auth-link a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* Success container */
+.success-container {
+  text-align: center;
+}
+
+.success-container h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 30px 25px;
+    width: 85%;
+  }
+  
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .auth-container h2 {
+    font-size: 36px;
+  }
+  
+  .auth-container p {
+    font-size: 22px;
+  }
+  
+  .auth-button {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 25px 20px;
+    width: 90%;
+  }
+  
+  .auth-container h2 {
+    font-size: 32px;
+  }
+  
+  .auth-container p {
+    font-size: 20px;
+  }
+  
+  .input-group input {
+    padding: 12px 18px;
+    font-size: 18px;
+  }
+  
+  .auth-button {
+    font-size: 20px;
+    padding: 12px;
+  }
+  
+  .auth-link p {
+    font-size: 20px;
+  }
+}

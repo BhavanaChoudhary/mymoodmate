@@ -1,0 +1,26 @@
+server:
+  port: 9091   
+
+spring:
+  application:
+    name: journal-service
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/moodmate_db
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+  webmvc:
+    cors:
+      allowed-origins: "http://localhost:3000"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
