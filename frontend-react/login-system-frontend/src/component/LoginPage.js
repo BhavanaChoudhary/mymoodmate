@@ -12,21 +12,10 @@ function LoginPage({ onLogin }) {
       const url = `http://localhost:9090/api/v1/customer/get?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
       const response = await axios.get(url);
       const userData = response.data;
-
-      // ✅ Save userId and token (if exists) in localStorage
-      if (userData && userData.id) {
-        localStorage.setItem("userId", userData.id);
-      }
-      if (userData && userData.token) {
-        localStorage.setItem("token", userData.token);
-      }
-
-      // still call parent callback
       onLogin(userData);
 
     } catch (error) {
       console.error('Login error:', error);
-      alert("Invalid credentials. Please try again.");
     }
   };
 
@@ -63,4 +52,19 @@ function LoginPage({ onLogin }) {
               value={password} 
               onChange={(e) => setPassword(e.target.value)} 
             />
-          </
+          </div>
+          
+          <button className="auth-button primary" onClick={handleLogin}>
+            Sign In
+          </button>
+          
+          <div className="auth-link">
+            <p>Don't have an account? <Link to="/register">Create one here</Link></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default LoginPage;
