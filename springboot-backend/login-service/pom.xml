@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http极速://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version> <!-- Compatible with Java 22 -->
+        <version>3.3.4</version> <!-- Compatible with Java 17 -->
         <relativePath/>
     </parent>
 
@@ -19,7 +19,7 @@
     <description>Login and registration page</description>
 
     <properties>
-        <java.version>22</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencyManagement>
@@ -78,14 +78,14 @@
 
     <build>
         <plugins>
-            <!-- Compiler plugin for Java 22 -->
+            <!-- Compiler plugin for Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>22</source>
-                    <target>22</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
 
